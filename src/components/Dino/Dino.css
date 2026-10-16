@@ -1,0 +1,142 @@
+.dino-game {
+  width: 602px;
+  margin: 32px auto;
+  color: #cfccd6;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.score-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+button {
+  padding: 8px 16px;
+  border: 1px solid #625b70;
+  border-radius: 4px;
+  background: #443e50;
+  color: #cfccd6;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #51495f;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.game {
+  width: 600px;
+  height: 225px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #625b70;
+  background: #2b2d38;
+}
+
+.game::before {
+  content: "";
+  position: absolute;
+  top: 200px;
+  width: 100%;
+  border-top: 1px solid #625b70;
+}
+
+#dino {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 20px;
+  background-image: url(img/trex.png);
+  background-size: 100% 100%;
+}
+
+#dino.ducking {
+  height: 25px;
+}
+
+#dino.shielded {
+  outline: 2px solid #a69bbd;
+}
+
+#cactus {
+  width: 20px;
+  height: 40px;
+  position: absolute;
+  top: 160px;
+  background-image: url(img/cactus.png);
+  background-size: 20px 40px;
+}
+
+#cactus.double-cactus {
+  width: 80px;
+  background-image: url(img/cactus.png), url(img/cactus.png);
+  background-position: left top, right top;
+  background-repeat: no-repeat;
+}
+
+.bird {
+  width: 40px;
+  height: 36px;
+  position: absolute;
+  top: 130px;
+  background-image: url(img/bird.png);
+}
+
+.shield-pickup {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 162px;
+  background-image: url(img/shield.png);
+}
+
+/* Display the supplied art without its light checkerboard backgrounds. */
+.bird, .shield-pickup {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(1) contrast(10) invert(1);
+  mix-blend-mode: screen;
+  opacity: 0.7;
+}
+
+.menu-background {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(36, 40, 50, 0.8);
+}
+
+.pause-menu {
+  padding: 16px 28px;
+  border: 1px solid #625b70;
+  border-radius: 4px;
+  background: #34303f;
+}
+
+.pause-menu h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.pause-menu button {
+  margin: 0 4px;
+}
+
+.controls, .shield-status {
+  margin: 12px 0;
+  font-size: 14px;
+}
